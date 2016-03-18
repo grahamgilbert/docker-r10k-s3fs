@@ -4,6 +4,5 @@
 echo "$S3_IDENTITY":"$S3_CREDENTIAL" >> /etc/passwd-s3fs
 chmod 600 /etc/passwd-s3fs
 # Mount s3 bucket from environment variable
-rm -rf /etc/puppetlabs/code
 mkdir -p /etc/puppetlabs/code
-s3fs $S3_BUCKET /etc/puppetlabs/code
+s3fs $S3_BUCKET /etc/puppetlabs/code -o nonempty
